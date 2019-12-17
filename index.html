@@ -13,6 +13,24 @@
 
 <body>
     <div class="site-wrapper">
+            <header>
+                <a class="logo">Immersive Photography</a>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="item-labels">
+                                <span>About</span>
+                                <span>Gallery</span>
+                            </div>
+                            <div class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </header>
         <div class="inner-wrapper">
         <section class="images-carousel" style="transform: translate3d(0%, 0px, 0px);">
             <section class="image-gallery" style="left: -120%;">
@@ -23,7 +41,7 @@
                 </div>
             </section>
             <section class="image-gallery active" style="left: 0%;">
-                <div id="humen" class="single-image">
+                <div id="humen" class="single-image single-image--curtain-dropdown">
                     <div class="heading-wrapper">
                         <h1 class="heading heading--active">Human</h1>
                     </div>
@@ -44,7 +62,7 @@
             <div class="curtain"></div>
             <div class="curtain"></div>
         </div>
-        <button id="next">Next</button>
+        <span id="next">></span>
     </div>
     <script src="scripts/script.js"></script>
 </body>
