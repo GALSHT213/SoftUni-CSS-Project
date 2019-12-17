@@ -13,48 +13,68 @@
 
 <body>
     <div class="site-wrapper">
-            <header>
-                <a class="logo">Immersive Photography</a>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <div class="item-labels">
-                                <span>About</span>
-                                <span>Gallery</span>
-                            </div>
-                            <div class="hamburger">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </header>
+        <header>
+            <a class="logo">Immersive Photography</a>
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="item-labels">
+                            <span>About</span>
+                            <span>Gallery</span>
+                            <span id="back">Back</span>
+                        </div>
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </header>
         <div class="inner-wrapper">
-        <section class="images-carousel" style="transform: translate3d(0%, 0px, 0px);">
-            <section class="image-gallery" style="left: -120%;">
-                <div id="urban" class="single-image">
-                    <div class="heading-wrapper">
-                        <h1 class="heading">Urban</h1>
+            <section class="images-carousel" style="transform: translate3d(0%, 0px, 0px);">
+                <section class="image-gallery" style="left: -120%;">
+                    <div id="urban" class="single-image">
+                        <div class="heading-wrapper">
+                            <h1 class="heading">Urban</h1>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section class="image-gallery active" style="left: 0%;">
-                <div id="humen" class="single-image single-image--curtain-dropdown">
-                    <div class="heading-wrapper">
-                        <h1 class="heading heading--active">Human</h1>
+                </section>
+                <section class="image-gallery active" style="left: 0%;">
+                    <div id="humen" class="single-image single-image--curtain-dropdown">
+                        <div class="heading-wrapper">
+                            <h1 class="heading heading--active">Human</h1>
+                        </div>
+                </section>
+                <section class="image-gallery" style="left: 120%;">
+                    <div id="nature" class="single-image">
+                        <div class="heading-wrapper">
+                            <h1 class="heading">Nature</h1>
+                        </div>
                     </div>
-                </div>
+                </section>
             </section>
-            <section class="image-gallery" style="left: 120%;">
-                <div id="nature" class="single-image">
-                    <div class="heading-wrapper">
-                        <h1 class="heading">Nature</h1>
-                    </div>
-                </div>
-            </section>
-        </section>
+
+            <div class="grid-gallery hide-visiblity">
+                <figure class="gallery-item" id="item--1">
+                    <img class="gallery-img" src="./assets/locations/norway/human-1.png">
+                    <div class="gallery-img-overlay"></div>
+                </figure>
+                <figure class="gallery-item" id="item--2">
+                    <img class="gallery-img" src="./assets/locations/norway/human-2.jpg">
+                    <div class="gallery-img-overlay"></div>
+                </figure>
+                <figure class="gallery-item" id="item--3">
+                    <img class="gallery-img" src="./assets/locations/norway/human-3.jpg">
+                    <div class="gallery-img-overlay"></div>
+                </figure>
+                <figure class="gallery-item" id="item--4">
+                    <img class="gallery-img" src="./assets/locations/norway/human-4.jpg">
+                    <div class="gallery-img-overlay"></div>
+                </figure>
+            </div>
+            </div>
         </div>
         <div class="curtains">
             <div class="curtain"></div>
