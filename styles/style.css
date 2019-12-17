@@ -37,7 +37,8 @@ html, body {
     opacity: .3;
 }
 .single-image {
-    background-color:purple;
+    position: relative;
+    cursor: pointer;
     height: 100%;
     width: 100%;
     background: url("../assets/locations/norway/norway-home-2.png");
@@ -52,21 +53,31 @@ html, body {
 }
 
 .heading-wrapper {
-    padding-top: 180px;
-    text-align: center;
+    position: relative;
+    top: 40%;
+    height: 80px;
+    overflow: hidden;
 }
 
-.heading-wrapper h1 {
+.heading {
+    position: absolute;
     color:white;
+    left: 50%;
+    transform: translate(-50%, 70%);
     font-size: 90px;
     margin:0;
     padding: 0;
+    transition: .5s;
+}
+.heading--active {
+    transform: translate(-50%, -5%);
 }
 
 #next {
     position: absolute;
     left: 50%;
     bottom: 10%;
+    z-index: 3;
 }
 
 #humen {
@@ -82,6 +93,30 @@ html, body {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     transition: .5s;
+}
+
+#urban {
+    background: url("../assets/locations/norway/urban.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+
+.curtains {
+    position: fixed;
+    left: 22%;
+    right: 22%;
+    top: 0%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+}
+.curtain {
+    width: 1px;
+    height: 100%;
+    background: rgba(66, 66, 66, 0.5);
 }
 
 /* MODIFIERS */

@@ -1,5 +1,5 @@
 var next = get("#next");
-var images = getAll("image-gallery");
+var images = $(".image-gallery");
 window.onload = function () {
     event(next, "click", function () {
         swap("clockwise");
@@ -27,10 +27,16 @@ function swap(direction) {
     }
 
     for (let i = 0; i < images.length; i++) {
+        let currentImage = $(images[i]);
         if (getStyleValue(images[i], ":", "%") + percent == 0) {
-            addClass(images[i], "active");
+            currentImage.addClass("active");
+            currentImage.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
+                function (e) {
+                    $(currentImage.find("h1")).addClass("heading--active");
+                });
         } else {
             removeClass(images[i], "active");
+            $(currentImage.find("h1")).removeClass("heading--active");
         }
     }
 

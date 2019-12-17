@@ -8,6 +8,7 @@
     <meta name="author" content="GSHTR">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,27 +16,36 @@
         <div class="inner-wrapper">
         <section class="images-carousel" style="transform: translate3d(0%, 0px, 0px);">
             <section class="image-gallery" style="left: -120%;">
-                <div class="single-image"></div>
+                <div id="urban" class="single-image">
+                    <div class="heading-wrapper">
+                        <h1 class="heading">Urban</h1>
+                    </div>
+                </div>
             </section>
             <section class="image-gallery active" style="left: 0%;">
                 <div id="humen" class="single-image">
                     <div class="heading-wrapper">
-                        <h1>Human</h1>
+                        <h1 class="heading heading--active">Human</h1>
                     </div>
                 </div>
             </section>
             <section class="image-gallery" style="left: 120%;">
                 <div id="nature" class="single-image">
                     <div class="heading-wrapper">
-                        <h1>Nature</h1>
+                        <h1 class="heading">Nature</h1>
                     </div>
                 </div>
             </section>
         </section>
         </div>
+        <div class="curtains">
+            <div class="curtain"></div>
+            <div class="curtain"></div>
+            <div class="curtain"></div>
+            <div class="curtain"></div>
+        </div>
         <button id="next">Next</button>
     </div>
-    
     <script src="scripts/script.js"></script>
 </body>
 
