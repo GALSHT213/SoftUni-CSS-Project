@@ -7,10 +7,11 @@ window.onload = function () {
     });
     
     $(".active").children().first().click(function () {
+        let category = $(".active").find(".single-image").attr("id");
         $(".active").children().first().addClass("active--blur");
         $(".images-carousel").addClass("images-carousel--grid_active");
         // $($(".active").find("h1")).removeClass("heading--active");
-        $(".grid-gallery").removeClass("hide-visiblity");
+        $(`#${category}-gallery`).removeClass("hide-visiblity");
 
         $("#next").addClass("hidden");
 
@@ -31,10 +32,11 @@ window.onload = function () {
     })
 
     $("#back").click(function() {
+        let category = $(".active").find(".single-image").attr("id");
         $(".active").children().first().removeClass("active--blur");
         $(".images-carousel").removeClass("images-carousel--grid_active");
         $($(".active").find("h1")).addClass("heading--active");
-        $(".grid-gallery").addClass("hide-visiblity");
+        $(`#${category}-gallery`).addClass("hide-visiblity");
         $("#next").removeClass("hidden");
 
         $(".gallery-img-overlay").removeClass("animate-height");
@@ -93,10 +95,11 @@ function swap(direction) {
     }
 
     $(".active").children().first().click(function () {
+        let category = $(".active").find(".single-image").attr("id");
         $(".active").children().first().addClass("active--blur");
         $(".images-carousel").addClass("images-carousel--grid_active");
         // $($(".active").find("h1")).removeClass("heading--active");
-        $(".grid-gallery").removeClass("hide-visiblity");
+        $(`#${category}-gallery`).removeClass("hide-visiblity");
         $("#next").addClass("hidden");
     })
 
