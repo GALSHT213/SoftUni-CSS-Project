@@ -116,5 +116,3 @@ header ul li { color: white; list-style: none; font-size: 20px; }
 .animate-height { animation: animate-grid-height 1s; animation-fill-mode: forwards; }
 
 .animate-width { animation: animate-grid-width 1s; animation-fill-mode: forwards; }
-
-/*# sourceMappingURL=site.css.map */
