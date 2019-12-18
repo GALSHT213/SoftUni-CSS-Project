@@ -39,7 +39,6 @@ html, body {
     cursor: pointer;
     height: 100%;
     width: 100%;
-    background: url("../assets/locations/norway/norway-home-2.png");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -103,14 +102,14 @@ html, body {
 }
 
 #humen {
-    background: url("../assets/locations/norway/humen.jpg");
+    background: url("../locations/norway/humen.jpg");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     transition: .5s;
 }
 #nature {
-    background: url("../assets/locations/norway/nature.jpg");
+    background: url("../locations/norway/nature.jpg");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -118,7 +117,7 @@ html, body {
 }
 
 #urban {
-    background: url("../assets/locations/norway/urban.jpg");
+    background: url("../locations/norway/urban.jpg");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -333,4 +332,7 @@ a {
 }
 .active--scale {
     transform: scale3d(1.3,1.3,1);
+}
+.hidden {
+    display: none;
 }
