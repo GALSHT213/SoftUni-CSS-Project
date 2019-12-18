@@ -1,0 +1,48 @@
+@keyframes curtain-dropdown {
+    0%{
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+/*--- TODO: user mixin with direction(height/width) ---*/
+@keyframes animate-grid-width {
+    0%{
+        height:100%;
+        width:0%;
+    }
+    50% {
+        height: 100%;
+        width: 100%;        
+    }
+    100% {
+        height: 100%;
+        width: 0%;
+    }
+}
+
+@keyframes animate-grid-height {
+    0%{
+        height:0%;
+        width:100%;
+    }
+    50% {
+        height: 100%;
+        width: 100%;        
+    }
+    100% {
+        height: 0%;
+        width: 100%;
+    }
+}
+
+.animate-height {
+    animation: animate-grid-height 1s;
+    animation-fill-mode: forwards;   
+}
+.animate-width {
+    animation: animate-grid-width 1s;
+    animation-fill-mode: forwards; 
+}

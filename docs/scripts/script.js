@@ -1,14 +1,18 @@
-var next = get("#next");
+var next = $("#next");
 var images = $(".image-gallery");
 window.onload = function () {
-    event(next, "click", function () {
+
+    $("#next").click(function () {
         swap("clockwise");
     });
     
     $(".active").children().first().click(function () {
-        $(".active").children().first().addClass("active--scale");
-        $($(".active").find("h1")).removeClass("heading--active");
-        $(".grid-gallery").removeClass("hide-visiblity");
+        let category = $(".active").find(".single-image").attr("id");
+        $(".active").children().first().addClass("active--blur");
+        $(".images-carousel").addClass("images-carousel--grid_active");
+        // $($(".active").find("h1")).removeClass("heading--active");
+        $(`#${category}-gallery`).removeClass("hide-visiblity");
+
         $("#next").addClass("hidden");
 
         $(".grid-gallery").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
@@ -21,24 +25,23 @@ window.onload = function () {
     
             $(".gallery-img-overlay").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
             function(e) {
-                $(".gallery-img").addClass("gallery-img--active");
-                $(".images-carousel").addClass("hide-visiblity");
+                $(".gallery-img").addClass("active--opacity");
             })
     
         });
     })
 
-
-
     $("#back").click(function() {
-        $(".active").children().first().removeClass("active--scale");
+        let category = $(".active").find(".single-image").attr("id");
+        $(".active").children().first().removeClass("active--blur");
+        $(".images-carousel").removeClass("images-carousel--grid_active");
         $($(".active").find("h1")).addClass("heading--active");
-        $(".grid-gallery").addClass("hide-visiblity");
+        $(`#${category}-gallery`).addClass("hide-visiblity");
         $("#next").removeClass("hidden");
 
         $(".gallery-img-overlay").removeClass("animate-height");
 
-        $(".gallery-img").removeClass("gallery-img--active");
+        $(".gallery-img").removeClass("active--opacity");
         $(".images-carousel").removeClass("hide-visiblity");
 
         $(".item-labels span:nth-child(3)").css("bottom", "-50px");
@@ -49,10 +52,10 @@ window.onload = function () {
 
 
 function swap(direction) {
-    let carousel = get(".images-carousel");
+    let carousel = document.querySelector(".images-carousel");
     var percent;
     if (direction == "clockwise") {
-         percent = getStyleValue(carousel, "(", "%") - 120;
+        percent = getStyleValue(carousel, "(", "%") - 120;
     } else {
         percent = getStyleValue(carousel, "(", "%") + 120;
     }
@@ -61,7 +64,7 @@ function swap(direction) {
 
     let activeIndex;
     for (let i = 0; i < images.length; i++) {
-        if (has(images[i], "active")) {
+        if ($(images[i]).hasClass("active")) {
             activeIndex = i;
         }
     }
@@ -75,7 +78,7 @@ function swap(direction) {
                     $(currentImage.find("h1")).addClass("heading--active");
                 });
         } else {
-            removeClass(images[i], "active");
+            currentImage.removeClass("active");
             $(currentImage.find("h1")).removeClass("heading--active");
             $(currentImage.find(".single-image")).removeClass("active--scale");
         }
@@ -92,9 +95,11 @@ function swap(direction) {
     }
 
     $(".active").children().first().click(function () {
-        $(".active").children().first().addClass("active--scale");
-        $($(".active").find("h1")).removeClass("heading--active");
-        $(".grid-gallery").removeClass("hide-visiblity");
+        let category = $(".active").find(".single-image").attr("id");
+        $(".active").children().first().addClass("active--blur");
+        $(".images-carousel").addClass("images-carousel--grid_active");
+        // $($(".active").find("h1")).removeClass("heading--active");
+        $(`#${category}-gallery`).removeClass("hide-visiblity");
         $("#next").addClass("hidden");
     })
 
@@ -108,8 +113,7 @@ function swap(direction) {
 
         $(".gallery-img-overlay").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
         function(e) {
-            $(".gallery-img").addClass("gallery-img--active");
-            $(".images-carousel").addClass("hide-visiblity");
+            $(".gallery-img").addClass("active--opacity");
         })
 
     });
@@ -123,40 +127,4 @@ function getStyleValue(element, from, to) {
     let secondIndex = transformStyle.indexOf(to);
     let percent = transformStyle.substr(firstIndex + 1, (secondIndex - firstIndex) - 1);
     return parseInt(percent.trim(), 0);
-}
-
-function get(selector) {
-    return document.querySelector(selector);
-}
-function getAll(targetClass) {
-    return document.getElementsByClassName(targetClass);
-}
-function has(element, targetClass) {
-    return element.classList.contains(targetClass);
-}
-function id(id) {
-    return document.getElementById(id);
-}
-function event(element, event, func) {
-    element.addEventListener(event, func);
-}
-function hide(elements) {
-    for (let element of elements) {
-        element.classList.add("hidden")
-    }
-}
-function show(elements) { 
-    for (let element of elements) {
-        element.classList.remove("hidden")
-    }
-}
-function addClass(element, targetClass) { 
-    element.classList.add(targetClass);
-}
-function removeClass(element, targetClass) {
-    element.classList.remove(targetClass);
-}
-function animate(element, animationClass) {
-    element.className = "";
-    addClass(element, animationClass);
 }
