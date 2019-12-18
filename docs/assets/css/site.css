@@ -26,11 +26,11 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; height: 100%; width:
 
 #next { position: absolute; right: 12%; top: 50%; z-index: 3; font-size: 45px; color: white; cursor: pointer; }
 
-#humen { background: url("../locations/norway/humen.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
+#humen { background: url("../images/humen.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
 
-#nature { background: url("../locations/norway/nature.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
+#nature { background: url("../images/nature.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
 
-#urban { background: url("../locations/norway/urban.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
+#urban { background: url("../images/urban.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
 
 .curtains { position: fixed; left: 22%; right: 22%; top: 0%; height: 0; z-index: 2; display: flex; justify-content: space-between; }
 
