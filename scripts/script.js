@@ -62,7 +62,18 @@ window.onload = function () {
 
         $(".item-labels span:nth-child(1)").css("bottom", "-50px");
         $(".item-labels span:nth-child(2)").css("bottom", "0");
-    })
+    });
+
+    $("#gallery").click(function() {
+        $("#next").removeClass("hidden");
+        $("#prev").removeClass("hidden");
+
+        $(".about-wrapper").removeClass("active--height");
+        $(".images-carousel").removeClass("hidden--height");
+
+        $(".item-labels span:nth-child(1)").css("bottom", "0");
+        $(".item-labels span:nth-child(2)").css("bottom", "-50px");
+    });
 
 }
 
