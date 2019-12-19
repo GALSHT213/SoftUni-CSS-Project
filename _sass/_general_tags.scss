@@ -26,6 +26,10 @@ a {
     overflow-y: auto;
     overflow-x: hidden;
 
+    @include respond-to('vsmall') {
+        margin-top: 0;
+    }
+
     /* Hide scrollbar for IE and Edge */
     -ms-overflow-style: none;
     /* Hide scrollbar for Chrome, Safari and Opera */

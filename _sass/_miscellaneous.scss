@@ -22,4 +22,7 @@
     font-size: 45px;
     color: white;
     cursor: pointer;
+    @include respond-to('vsmall') {
+        right: 4%;
+    }
 }
