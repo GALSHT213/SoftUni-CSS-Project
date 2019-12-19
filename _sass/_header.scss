@@ -14,9 +14,12 @@ header {
     ul {
         float:right;
         margin-top: 50px;
+        margin-bottom: 100px;
         @include respond-to('vsmall') {
             float: none;
             padding-left: 0;
+            margin-top:15px;
+            margin-bottom: 66px;
         }
         li {
             color: white;
@@ -31,7 +34,7 @@ header {
     position: relative;
     display: inline-block;
     height: 25px;
-    width: 75px;
+    width: 62px;
     overflow: hidden;
     span{
         display: block;
