@@ -71,27 +71,25 @@
     transform: translate(-50%, -5%);
 }
 
-#human {
-    background: url("../images/humen.jpg");
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    transition: .5s;
-}
-#nature {
-    background: url("../images/nature.jpg");
+%background-image {
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     transition: .5s;
 }
 
+#human {
+    @extend %background-image;
+    background-image: url("../images/humen.jpg");
+}
+#nature {
+    @extend %background-image;
+    background-image: url("../images/nature.jpg");
+}
+
 #urban {
-    background: url("../images/urban.jpg");
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    transition: .5s;
+    @extend %background-image;
+    background-image: url("../images/urban.jpg");
 }
 
 .images-carousel--grid_active {

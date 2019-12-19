@@ -66,11 +66,13 @@ header ul li { color: white; list-style: none; font-size: 20px; }
 
 .heading--active { transform: translate(-50%, -5%); }
 
-#human { background: url("../images/humen.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
+#human, #nature, #urban { background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
 
-#nature { background: url("../images/nature.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
+#human { background-image: url("../images/humen.jpg"); }
 
-#urban { background: url("../images/urban.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transition: .5s; }
+#nature { background-image: url("../images/nature.jpg"); }
+
+#urban { background-image: url("../images/urban.jpg"); }
 
 .images-carousel--grid_active { max-height: 250px; margin: 0% 0% 10% 0%; }
 
@@ -78,9 +80,15 @@ header ul li { color: white; list-style: none; font-size: 20px; }
 
 .curtain { width: 1px; height: 1500px; background: rgba(66, 66, 66, 0.5); }
 
-#next { position: absolute; right: 12%; top: 50%; z-index: 3; font-size: 45px; color: white; cursor: pointer; }
+#next, #prev { position: absolute; top: 50%; z-index: 3; font-size: 45px; color: white; cursor: pointer; }
+
+#next { right: 12%; }
 
 @media only screen and (max-width: 569px) { #next { right: 4%; } }
+
+#prev { left: 12%; }
+
+@media only screen and (max-width: 569px) { #prev { left: 4%; } }
 
 .grid-gallery { margin: 0 auto; width: 90%; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-flow: dense; opacity: 1; transition: 1s; }
 
@@ -126,9 +134,7 @@ footer h1 { color: white; }
   100% { height: 100%;
     width: 0%; } }
 
-@keyframes animate-grid-height { 0% { height: 0%;
-    width: 100%; }
-  50% { height: 100%;
+@keyframes animate-grid-height { 0% { height: 100%;
     width: 100%; }
   100% { height: 0%;
     width: 100%; } }

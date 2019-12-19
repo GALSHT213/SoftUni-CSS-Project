@@ -14,15 +14,27 @@
     background: rgba(66, 66, 66, 0.5);
 }
 
-#next {
+%switch-button {
     position: absolute;
-    right: 12%;
     top:50%;
     z-index: 3;
     font-size: 45px;
     color: white;
     cursor: pointer;
+
+}
+
+#next {
+    @extend %switch-button;
+    right: 12%;
     @include respond-to('vsmall') {
         right: 4%;
     }
+}
+#prev {
+    @extend %switch-button;
+    @include respond-to('vsmall') {
+        left: 4%;
+    }
+    left: 12%;
 }

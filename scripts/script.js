@@ -5,15 +5,18 @@ window.onload = function () {
     $("#next").click(function () {
         swap("clockwise");
     });
+    $("#prev").click(function () {
+        swap("counter-clockwise");
+    })
     
     $(".active").children().first().click(function () {
         let category = $(".active").find(".single-image").attr("id");
         $(".active").children().first().addClass("active--blur");
         $(".images-carousel").addClass("images-carousel--grid_active");
-        // $($(".active").find("h1")).removeClass("heading--active");
         $(`#${category}-gallery`).removeClass("hide-visiblity");
 
         $("#next").addClass("hidden");
+        $("#prev").addClass("hidden");
 
         $(".grid-gallery").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
         function (e) {
@@ -38,6 +41,7 @@ window.onload = function () {
         $($(".active").find("h1")).addClass("heading--active");
         $(`#${category}-gallery`).addClass("hide-visiblity");
         $("#next").removeClass("hidden");
+        $("#prev").removeClass("hidden");
 
         $(".gallery-img-overlay").removeClass("animate-height");
 
@@ -90,17 +94,17 @@ function swap(direction) {
         images[(activeIndex + 2) % images.length].style.left = `${getStyleValue(images[(activeIndex + 2) % images.length], ":", "%") + 360}%`;
     } else {
         images[activeIndex].style.left = `${getStyleValue(images[activeIndex], ":", "%")}%`;
-        images[(activeIndex + 1) % images.length].style.left = `${getStyleValue(images[(activeIndex + 1) % images.length], ":", "%")}%`;
-        images[(activeIndex + 2) % images.length].style.left = `${getStyleValue(images[(activeIndex + 2) % images.length], ":", "%") - 360}%`;
+        images[(activeIndex + 1) % images.length].style.left = `${getStyleValue(images[(activeIndex + 1) % images.length], ":", "%") - 360}%`;
+        images[(activeIndex + 2) % images.length].style.left = `${getStyleValue(images[(activeIndex + 2) % images.length], ":", "%")}%`;
     }
 
     $(".active").children().first().click(function () {
         let category = $(".active").find(".single-image").attr("id");
         $(".active").children().first().addClass("active--blur");
         $(".images-carousel").addClass("images-carousel--grid_active");
-        // $($(".active").find("h1")).removeClass("heading--active");
         $(`#${category}-gallery`).removeClass("hide-visiblity");
         $("#next").addClass("hidden");
+        $("#prev").addClass("hidden");
     })
 
     $(".grid-gallery").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
