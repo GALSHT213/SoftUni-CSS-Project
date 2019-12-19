@@ -3,6 +3,11 @@
     margin:0 22%;
     overflow: hidden;
     transition: 1s;
+
+    @include respond-to('vsmall') {
+        margin: 0 3%;
+    }
+
     h1 {
         color: white;
         line-height: 35px;
@@ -24,6 +29,9 @@
     height: 100%;
     width: 100%;
     display: flex;
+    @include respond-to('medium') {
+        flex-direction: column;
+    }
 }
 .about-info {
     @extend %hide-scroll;
