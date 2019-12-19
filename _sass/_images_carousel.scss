@@ -3,6 +3,10 @@
     height: 80%;
     margin: 0 22%;
     transition: 1s;
+
+    @include respond-to('vsmall') {
+        margin: 0 13%;
+    }
 }
 
 .image-gallery {
@@ -45,6 +49,9 @@
     top: 40%;
     height: 80px;
     overflow: hidden;
+    @include respond-to('vsmall') {
+        height: 55px;
+    }
 }
 
 .heading {
@@ -56,6 +63,9 @@
     margin:0;
     padding: 0;
     transition: .5s;
+    @include respond-to('vsmall') {
+        font-size: 55px;
+    }
 }
 .heading--active {
     transform: translate(-50%, -5%);

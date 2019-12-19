@@ -3,9 +3,21 @@ header {
     transform: translateX(-50%);
     width: 50%;
     position: relative;
+
+    @include respond-to('vsmall') {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
     ul {
         float:right;
         margin-top: 50px;
+        @include respond-to('vsmall') {
+            float: none;
+            padding-left: 0;
+        }
         li {
             color: white;
             list-style: none;
@@ -65,4 +77,10 @@ header {
     font-size: 20px;
     margin-top: 50px;
     float: left;
+    @include respond-to('small') {
+        width: 105px;
+    }
+    @include respond-to('vsmall') {
+        width: 200px;
+    }
 }
